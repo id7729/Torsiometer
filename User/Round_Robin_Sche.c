@@ -2,14 +2,14 @@
 #include "LED.h"
 #include "demo.h"
 #include "RS485_driver_public.h"
-#define Task_Max	(6)
+#define Task_Max	(7)
 
 //任务结构体
 typedef struct _Task_Components
 {
 	uint8_t Run;			//程序运行标记：0-不运行，1-运行
 	uint16_t Timer;			//计时器
-	uint8_t ItvTime;		//任务运行间隔时间
+	uint16_t ItvTime;		//任务运行间隔时间
 	void (*TaskHook)(void);	//要运行的任务函数
 	
 }Task_Components;			//任务定义
@@ -21,7 +21,8 @@ static Task_Components TaskComps[] =
 	{0, 10, 100, Task_Screen},						//
 	{0, 500, 50, Show_Torsional_Value_Task},
 	{0, 500, 20, Show_Ceiling_Floor_Value_Task},
-	{0, 100, 20, RGY_Light_Task}
+	{0, 100, 20, RGY_Light_Task},
+	{0, 100, 6000, Speaker_Task}
 };
 
 /**************************************************************************************

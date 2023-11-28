@@ -6,6 +6,7 @@
 ".\objects\rs485_driver.o"
 ".\objects\demo.o"
 ".\objects\workmode.o"
+".\objects\wtn6040.o"
 ".\objects\dmg80480c043_01wtc.o"
 ".\objects\varmalloc.o"
 ".\objects\ac78xx_debugout.o"

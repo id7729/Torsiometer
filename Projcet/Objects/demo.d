@@ -21,3 +21,4 @@
 .\objects\demo.o: E:\Program Files (x86)\keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\objects\demo.o: ..\User\UartScreen\VarMalloc.h
 .\objects\demo.o: ..\User\WorkMode.h
+.\objects\demo.o: ..\User\WTN6040.h

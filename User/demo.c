@@ -5,6 +5,7 @@
 #include "RS485_driver_private.h"
 #include "DMG80480C043_01WTC.h"
 #include "WorkMode.h"
+#include "WTN6040.h"
 uint8_t ReadMeasuredValue[8] = {0x01, 0x03, 0x00, 0x1E, 0x00, 0x02, 0xA4, 0x0D};//读取测量值请求报文
 Data_Processing_U Torque_value;
 	
@@ -122,4 +123,24 @@ void RGY_Light_Task(void)
 		unsigned char pdata[2] = {0, 0};
 		SCREENWriteVarCmd(ADR_VAR_ICON, pdata, 2);
 	}	
+}
+
+/**************************************************************************************
+* FunctionName   : Speaker_Task(void)
+* Description    : 语音提示音任务
+* EntryParameter : none
+* ReturnValue    : none
+* attention      : ***    ***
+**************************************************************************************/
+void Speaker_Task(void)
+{
+	if(Num > CurrentIndex1)	//Num值大于上限值，扭力值过大状态
+	{
+		Line_2A_WTN6(OVER_CEILING);		
+	}
+	
+	if(Num < CurrentIndex2)	//Num小于下限，扭力值过小状态
+	{
+		Line_2A_WTN6(UNDER_FLOOR);	
+	}
 }

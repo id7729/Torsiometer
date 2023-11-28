@@ -22,7 +22,9 @@ void Show_Ceiling_Floor_Value_Task(void);
 void Led_Control_Test_Task(void);
 
 void RGY_Light_Task(void);
-	
+
+void Speaker_Task(void);
+
 extern uint8_t ReadMeasuredValue[];
 extern Data_Processing_U Torque_value;//±äÁ¿ÉùÃ÷
 #endif

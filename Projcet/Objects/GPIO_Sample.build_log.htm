@@ -21,15 +21,15 @@ Target DLL:      Segger\JL2CM3.dll V2.99.40.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-F:\KeilProject\AC7811\Torsiometer\Projcet\project.uvprojx
-Project File Date:  10/30/2023
+F:\KeilProject\AC7811\Torsiometer_git\Projcet\project.uvprojx
+Project File Date:  11/27/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'E:\Program Files (x86)\keil_v5\ARM\ARMCC\Bin'
 Build target 'Project'
-compiling demo.c...
+compiling Round_Robin_Sche.c...
 linking...
-Program Size: Code=11680 RO-data=1012 RW-data=296 ZI-data=19104  
+Program Size: Code=12484 RO-data=1012 RW-data=316 ZI-data=19100  
 FromELF: creating hex file...
 ".\Objects\GPIO_Sample.axf" - 0 Error(s), 0 Warning(s).
 
@@ -95,23 +95,23 @@ Package Vendor: AutoChips
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: AutoChips.AC781x Development Kit::Board Support:AC781x Development Kit:Debug Interface:1.0.0
-      Source file:   Device/Source/ac78xx_debugout.c
       Include file:  Device/Include/ac78xx_debugout.h
+      Source file:   Device/Source/ac78xx_debugout.c
 
    * Component: AutoChips::Device:ATC Drivers:ACMP:1.0.0
-      Source file:   ATC_Driver/Drivers/ACMP/ac78xx_acmp.c
-      Include file:  ATC_Driver/Drivers/ACMP/ac78xx_acmp_reg.h
       Include file:  ATC_Driver/Drivers/ACMP/ac78xx_acmp.h
+      Include file:  ATC_Driver/Drivers/ACMP/ac78xx_acmp_reg.h
+      Source file:   ATC_Driver/Drivers/ACMP/ac78xx_acmp.c
 
    * Component: AutoChips::Device:ATC Drivers:ADC:1.0.0
-      Include file:  ATC_Driver/Drivers/ADC/ac78xx_adc.h
-      Source file:   ATC_Driver/Drivers/ADC/ac78xx_adc.c
       Include file:  ATC_Driver/Drivers/ADC/ac78xx_adc_reg.h
+      Source file:   ATC_Driver/Drivers/ADC/ac78xx_adc.c
+      Include file:  ATC_Driver/Drivers/ADC/ac78xx_adc.h
 
    * Component: AutoChips::Device:ATC Drivers:CAN:1.0.0
+      Include file:  ATC_Driver/Drivers/CAN/ac78xx_can_reg.h
       Source file:   ATC_Driver/Drivers/CAN/ac78xx_can.c
       Include file:  ATC_Driver/Drivers/CAN/ac78xx_can.h
-      Include file:  ATC_Driver/Drivers/CAN/ac78xx_can_reg.h
 
    * Component: AutoChips::Device:ATC Drivers:CRC:1.0.0
       Include file:  ATC_Driver/Drivers/CRC/ac78xx_crc_reg.h
@@ -119,24 +119,24 @@ Package Vendor: AutoChips
       Include file:  ATC_Driver/Drivers/CRC/ac78xx_crc.h
 
    * Component: AutoChips::Device:ATC Drivers:CTU:1.0.0
-      Include file:  ATC_Driver/Drivers/CTU/ac78xx_ctu.h
       Source file:   ATC_Driver/Drivers/CTU/ac78xx_ctu.c
       Include file:  ATC_Driver/Drivers/CTU/ac78xx_ctu_reg.h
+      Include file:  ATC_Driver/Drivers/CTU/ac78xx_ctu.h
 
    * Component: AutoChips::Device:ATC Drivers:DMA:1.0.0
+      Include file:  ATC_Driver/Drivers/DMA/ac78xx_dma_reg.h
       Include file:  ATC_Driver/Drivers/DMA/ac78xx_dma.h
       Source file:   ATC_Driver/Drivers/DMA/ac78xx_dma.c
-      Include file:  ATC_Driver/Drivers/DMA/ac78xx_dma_reg.h
 
    * Component: AutoChips::Device:ATC Drivers:GPIO:1.0.0
-      Include file:  ATC_Driver/Drivers/GPIO/ac78xx_gpio.h
       Source file:   ATC_Driver/Drivers/GPIO/ac78xx_gpio.c
       Include file:  ATC_Driver/Drivers/GPIO/ac78xx_gpio_reg.h
+      Include file:  ATC_Driver/Drivers/GPIO/ac78xx_gpio.h
 
    * Component: AutoChips::Device:ATC Drivers:I2C:1.0.0
-      Include file:  ATC_Driver/Drivers/IIC/ac78xx_i2c.h
-      Source file:   ATC_Driver/Drivers/IIC/ac78xx_i2c.c
       Include file:  ATC_Driver/Drivers/IIC/ac78xx_i2c_reg.h
+      Source file:   ATC_Driver/Drivers/IIC/ac78xx_i2c.c
+      Include file:  ATC_Driver/Drivers/IIC/ac78xx_i2c.h
 
    * Component: AutoChips::Device:ATC Drivers:LIN:1.0.0
       Include file:  ATC_Driver/Drivers/LIN/ac78xx_lin.h
@@ -144,9 +144,9 @@ Package Vendor: AutoChips
       Source file:   ATC_Driver/Drivers/LIN/ac78xx_lin.c
 
    * Component: AutoChips::Device:ATC Drivers:PWDT:1.0.0
-      Include file:  ATC_Driver/Drivers/PWDT/ac78xx_pwdt.h
       Include file:  ATC_Driver/Drivers/PWDT/ac78xx_pwdt_reg.h
       Source file:   ATC_Driver/Drivers/PWDT/ac78xx_pwdt.c
+      Include file:  ATC_Driver/Drivers/PWDT/ac78xx_pwdt.h
 
    * Component: AutoChips::Device:ATC Drivers:PWM:1.0.0
       Include file:  ATC_Driver/Drivers/PWM/ac78xx_pwm_reg.h
@@ -154,34 +154,34 @@ Package Vendor: AutoChips
       Source file:   ATC_Driver/Drivers/PWM/ac78xx_pwm.c
 
    * Component: AutoChips::Device:ATC Drivers:RTC:1.0.0
-      Include file:  ATC_Driver/Drivers/RTC/ac78xx_rtc.h
-      Include file:  ATC_Driver/Drivers/RTC/ac78xx_rtc_reg.h
       Source file:   ATC_Driver/Drivers/RTC/ac78xx_rtc.c
+      Include file:  ATC_Driver/Drivers/RTC/ac78xx_rtc_reg.h
+      Include file:  ATC_Driver/Drivers/RTC/ac78xx_rtc.h
 
    * Component: AutoChips::Device:ATC Drivers:SPI:1.0.0
-      Include file:  ATC_Driver/Drivers/SPI/ac78xx_spi_reg.h
       Include file:  ATC_Driver/Drivers/SPI/ac78xx_spi.h
+      Include file:  ATC_Driver/Drivers/SPI/ac78xx_spi_reg.h
       Source file:   ATC_Driver/Drivers/SPI/ac78xx_spi.c
 
    * Component: AutoChips::Device:ATC Drivers:TIMER:1.0.0
       Include file:  ATC_Driver/Drivers/TIMER/ac78xx_timer.h
-      Include file:  ATC_Driver/Drivers/TIMER/ac78xx_timer_reg.h
       Source file:   ATC_Driver/Drivers/TIMER/ac78xx_timer.c
+      Include file:  ATC_Driver/Drivers/TIMER/ac78xx_timer_reg.h
 
    * Component: AutoChips::Device:ATC Drivers:UART:1.0.0
-      Source file:   ATC_Driver/Drivers/UART/ac78xx_uart.c
       Include file:  ATC_Driver/Drivers/UART/ac78xx_uart.h
       Include file:  ATC_Driver/Drivers/UART/ac78xx_uart_reg.h
+      Source file:   ATC_Driver/Drivers/UART/ac78xx_uart.c
 
    * Component: AutoChips::Device:ATC Drivers:Watchdog:1.0.0
-      Source file:   ATC_Driver/Drivers/WDG/ac78xx_wdg.c
-      Include file:  ATC_Driver/Drivers/WDG/ac78xx_wdg_reg.h
       Include file:  ATC_Driver/Drivers/WDG/ac78xx_wdg.h
+      Include file:  ATC_Driver/Drivers/WDG/ac78xx_wdg_reg.h
+      Source file:   ATC_Driver/Drivers/WDG/ac78xx_wdg.c
 
    * Component: AutoChips::Device:ATC Drivers:eFlash:1.0.0
+      Source file:   ATC_Driver/Drivers/eFlash/ac78xx_eflash.c
       Include file:  ATC_Driver/Drivers/eFlash/ac78xx_eflash.h
       Include file:  ATC_Driver/Drivers/eFlash/ac78xx_eflash_reg.h
-      Source file:   ATC_Driver/Drivers/eFlash/ac78xx_eflash.c
 
    * Component: AutoChips::Device:ATC Drivers:sFlash:1.0.0
       Include file:  ATC_Driver/Drivers/SerialFlash/ac78xx_serialflash_reg.h
@@ -189,13 +189,13 @@ Package Vendor: AutoChips
       Source file:   ATC_Driver/Drivers/SerialFlash/ac78xx_serialflash.c
 
    * Component: AutoChips::Device:Startup:1.0.0
-      Source file:   Device/Source/ARM/startup_ac78xx.s
-      Source file:   Device/Source/system_ac78xx.c
-      Source file:   Device/Source/ac78xx_ckgen.c
-      Include file:  Device/Source/ac78xx_ckgen_regs.h
-      Source file:   Device/Source/ac78xx_spm.c
       Include file:  Device/Source/ac78xx_spm_regs.h
+      Source file:   Device/Source/system_ac78xx.c
+      Include file:  Device/Source/ac78xx_ckgen_regs.h
+      Source file:   Device/Source/ARM/startup_ac78xx.s
       Include file:  Device/Source/system_ac78xx.h
+      Source file:   Device/Source/ac78xx_spm.c
+      Source file:   Device/Source/ac78xx_ckgen.c
 Build Time Elapsed:  00:00:01
 </pre>
 </body>

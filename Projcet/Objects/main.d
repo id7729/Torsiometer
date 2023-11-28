@@ -23,3 +23,4 @@
 .\objects\main.o: E:\Program Files (x86)\keil_v5\ARM\ARMCC\Bin\..\include\math.h
 .\objects\main.o: E:\Program Files (x86)\keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\main.o: E:\Program Files (x86)\keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\main.o: ..\User\WTN6040.h

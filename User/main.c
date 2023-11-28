@@ -11,12 +11,12 @@
 #include "Round_Robin_Sche.h"
 #include "VarMalloc.h"
 #include "DMG80480C043_01WTC.h"
+#include "WTN6040.h"
 /*************<end>********************/
 
 int main(void)
 {
-	
-//	InitDelay();
+	Init_WTN6040();
 	LED_Init();
 	RS485_Init();
 	Timer_Init();
