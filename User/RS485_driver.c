@@ -22,8 +22,9 @@ void RS485_Init(void)
 	//1.初始化UART5
 	UART_SettingType uartSetting = {0};
 
+	
 	GPIO_SetFunc(GPIO_PB13, 3);//PB13复用功能3 --- UART5_Tx
-    GPIO_SetFunc(GPIO_PB14, 3);//PB14复用功能3 --- UART5_Rx
+    GPIO_SetFunc(GPIO_PB14, 3);//PB14复用功能3 --- UART5_Rx	
 
     uartSetting.baudrate = 4800;
     uartSetting.dataBits = 8;

@@ -27,7 +27,7 @@ extern uint8_t CurrentIndex2;
 extern uint8_t LastIndex2;
 extern uint8_t Ceiling_Value;
 extern uint8_t Floor_Value;
-extern int offset;
+extern float offset;
 /**********************************************************************
 fun extern
 ***********************************************************************/

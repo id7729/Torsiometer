@@ -25,6 +25,7 @@ void RGY_Light_Task(void);
 
 void Speaker_Task(void);
 
+extern float show_num;	
 extern uint8_t ReadMeasuredValue[];
 extern Data_Processing_U Torque_value;//±äÁ¿ÉùÃ÷
 #endif

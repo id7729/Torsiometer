@@ -8,8 +8,10 @@
 #include "WTN6040.h"
 uint8_t ReadMeasuredValue[8] = {0x01, 0x03, 0x00, 0x1E, 0x00, 0x02, 0xA4, 0x0D};//读取测量值请求报文
 Data_Processing_U Torque_value;
-	
+float show_num = 0;	
 float Num=0;
+uint8_t flag_speaker_yet = 0;
+uint8_t flag_speaker_yet_counter = 0;
 
 /**************************************************************************************
 * FunctionName   : SendRequst()
@@ -32,17 +34,18 @@ void SendRequst(void)
 **************************************************************************************/
 void Led_Control_Task(void)
 {
+
 	Led_Control(100, 0, 1);				//关闭所有灯光
 	Led_Control(CurrentIndex1, 1, 0);	//标定上限显示
 	Led_Control(CurrentIndex2, 1, 0);	//标定下限显示
-	Num = ((Torque_value.n) + 68) / 10;	//每格0.1N*m
-	Num = fabs(Num);
-	Num -= offset;
-	if(Num < 0)
+	Num = ((Torque_value.n) + 68)/10;		//单位0.1N*m
+	show_num = (Num + 50) + offset;
+//	Num = fabs(Num);
+	if(show_num < 0)
 	{
-		Num = 0;
+		show_num = 0;
 	}
-	Led_Control(Num, 1, 1);		
+	Led_Control(show_num, 1, 1);		
 }
 
 /**************************************************************************************
@@ -108,17 +111,18 @@ void Show_Ceiling_Floor_Value_Task(void)
 **************************************************************************************/
 void RGY_Light_Task(void)
 {
-	if(Num > CurrentIndex1 || Num == CurrentIndex1)	//Num值大于上限值，扭力值过大状态
+	if(show_num > CurrentIndex1)	//Num值大于上限值，扭力值过大状态
 	{
 		unsigned char pdata[2] = {0, 2};
 		SCREENWriteVarCmd(ADR_VAR_ICON, pdata, 2);
 	}
-	if(Num > CurrentIndex2 && Num < CurrentIndex1) //Num大于下限，小于上限，正常状态
+	if(show_num > CurrentIndex2 && show_num < CurrentIndex1) //Num大于下限，小于上限，正常状态
 	{
 		unsigned char pdata[2] = {0, 1};
+		
 		SCREENWriteVarCmd(ADR_VAR_ICON, pdata, 2);				
 	}
-	if(Num < CurrentIndex2 || Num == CurrentIndex2)	//Num小于下限，扭力值过小状态
+	if(show_num < CurrentIndex2)	//Num小于下限，扭力值过小状态
 	{
 		unsigned char pdata[2] = {0, 0};
 		SCREENWriteVarCmd(ADR_VAR_ICON, pdata, 2);
@@ -134,13 +138,23 @@ void RGY_Light_Task(void)
 **************************************************************************************/
 void Speaker_Task(void)
 {
-	if(Num > CurrentIndex1)	//Num值大于上限值，扭力值过大状态
+	if(show_num > CurrentIndex1 && flag_speaker_yet == 0)	//Num值大于上限值，扭力值过大状态
 	{
-		Line_2A_WTN6(OVER_CEILING);		
+		Line_2A_WTN6(OVER_CEILING);
+		flag_speaker_yet = 1;
+	}
+	else if(show_num < CurrentIndex2)
+	{
+		flag_speaker_yet_counter++;
+		if(flag_speaker_yet_counter > 3)
+		{
+			flag_speaker_yet = 0;
+		}
 	}
 	
-	if(Num < CurrentIndex2)	//Num小于下限，扭力值过小状态
-	{
-		Line_2A_WTN6(UNDER_FLOOR);	
-	}
+	
+//	if(Num < CurrentIndex2)	//Num小于下限，扭力值过小状态
+//	{
+//		Line_2A_WTN6(UNDER_FLOOR);	
+//	}
 }

@@ -22,7 +22,7 @@ static Task_Components TaskComps[] =
 	{0, 500, 50, Show_Torsional_Value_Task},
 	{0, 500, 20, Show_Ceiling_Floor_Value_Task},
 	{0, 100, 20, RGY_Light_Task},
-	{0, 100, 6000, Speaker_Task}
+	{0, 100, 200, Speaker_Task}
 };
 
 /**************************************************************************************

@@ -11,9 +11,9 @@ uint8_t CurrentIndex1 = 0;			//标定上限当前值，用于点灯
 uint8_t LastIndex1 = 0;				//上一次标定上限值，主要用于关灯的作用
 uint8_t CurrentIndex2 = 0;			//标定下限当前值，用于点灯
 uint8_t LastIndex2 = 0;             //上一次标定下限值，主要用于关灯的作用
-uint8_t Ceiling_Value = 0;			//上限值具体值，是加/减的操作对象	
+uint8_t Ceiling_Value = 2;			//上限值具体值，是加/减的操作对象	
 uint8_t Floor_Value = 0;			//下限值具体值，是加/减的操作对象
-int offset = 0;
+float offset = 0;
 
 /**********************************************************************
 fun
@@ -30,7 +30,7 @@ fun
 void Sustain_CeilingLed_ON(void)
 {
 	Led_Control(LastIndex1, 0, 0);
-	CurrentIndex1 = Ceiling_Value;
+	CurrentIndex1 = Ceiling_Value + 49;
 	Led_Control(CurrentIndex1, 1, 0);
 	LastIndex1 = CurrentIndex1;
 }
@@ -45,7 +45,7 @@ void Sustain_CeilingLed_ON(void)
 void Sustain_FloorLed_ON(void)
 {
 	Led_Control(LastIndex2, 0, 0);
-	CurrentIndex2 = Floor_Value;
+	CurrentIndex2 = Floor_Value + 49;
 	Led_Control(CurrentIndex2, 1, 0);
 	LastIndex2 = CurrentIndex2;
 }
@@ -62,7 +62,6 @@ void Sustain_FloorLed_ON(void)
  ******************************************************************/
 void Menu_Pro(void)
 {
-    
     /******************************************************************/
     //按键处理
     if(ScreenRevAdr)
@@ -70,8 +69,8 @@ void Menu_Pro(void)
         switch(ScreenRevAdr)
         {
             //去皮
-            case ADR_KEY_CLEAR_TARE:				
-                offset = Num;
+            case ADR_KEY_CLEAR_TARE:
+                offset = -Num;
 				SCREENprintf(ADR_RETURN_STATUS_BAR,"Request sent successfully");
                 break;
             
