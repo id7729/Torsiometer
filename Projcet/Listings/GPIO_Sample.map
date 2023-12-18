@@ -61,9 +61,11 @@ Section Cross References
     demo.o(i.SendRequst) refers to demo.o(.data) for ReadMeasuredValue
     demo.o(i.Show_Ceiling_Floor_Value_Task) refers to dmg80480c043_01wtc.o(i.SCREENWriteVarCmd) for SCREENWriteVarCmd
     demo.o(i.Show_Ceiling_Floor_Value_Task) refers to workmode.o(.data) for Ceiling_Value
+    demo.o(i.Show_Torsional_Value_Task) refers to fadd.o(.text) for __aeabi_fsub
+    demo.o(i.Show_Torsional_Value_Task) refers to fmul.o(.text) for __aeabi_fmul
     demo.o(i.Show_Torsional_Value_Task) refers to ffixui.o(.text) for __aeabi_f2uiz
     demo.o(i.Show_Torsional_Value_Task) refers to dmg80480c043_01wtc.o(i.SCREENWriteVarCmd) for SCREENWriteVarCmd
-    demo.o(i.Show_Torsional_Value_Task) refers to demo.o(.data) for Num
+    demo.o(i.Show_Torsional_Value_Task) refers to demo.o(.data) for show_num
     demo.o(i.Speaker_Task) refers to ffltui.o(.text) for __aeabi_ui2f
     demo.o(i.Speaker_Task) refers to cfcmple.o(.text) for __aeabi_cfcmple
     demo.o(i.Speaker_Task) refers to wtn6040.o(i.Line_2A_WTN6) for Line_2A_WTN6
@@ -1938,79 +1940,79 @@ Image Symbol Table
     i.SetHSEClock                            0x08002124   Section        0  system_ac78xx.o(i.SetHSEClock)
     i.SetSysClock                            0x08002188   Section        0  system_ac78xx.o(i.SetSysClock)
     i.Show_Ceiling_Floor_Value_Task          0x08002190   Section        0  demo.o(i.Show_Ceiling_Floor_Value_Task)
-    i.Show_Torsional_Value_Task              0x080021cc   Section        0  demo.o(i.Show_Torsional_Value_Task)
-    i.Speaker_Task                           0x080021f8   Section        0  demo.o(i.Speaker_Task)
-    i.Sustain_CeilingLed_ON                  0x08002268   Section        0  workmode.o(i.Sustain_CeilingLed_ON)
-    i.Sustain_FloorLed_ON                    0x080022a4   Section        0  workmode.o(i.Sustain_FloorLed_ON)
-    i.SysTickDelay                           0x080022e0   Section        0  system_ac78xx.o(i.SysTickDelay)
-    SysTickDelay                             0x080022e1   Thumb Code    64  system_ac78xx.o(i.SysTickDelay)
-    i.SysTickRepeatDelay                     0x08002320   Section        0  system_ac78xx.o(i.SysTickRepeatDelay)
-    SysTickRepeatDelay                       0x08002321   Thumb Code    26  system_ac78xx.o(i.SysTickRepeatDelay)
-    i.SystemInit                             0x0800233a   Section        0  system_ac78xx.o(i.SystemInit)
-    i.TIM1_Task                              0x08002354   Section        0  timer.o(i.TIM1_Task)
-    i.TIMER0_IRQHandler                      0x0800237c   Section        0  ac78xx_timer.o(i.TIMER0_IRQHandler)
-    i.TIMER1_IRQHandler                      0x08002394   Section        0  ac78xx_timer.o(i.TIMER1_IRQHandler)
-    i.TIMER2_IRQHandler                      0x080023ac   Section        0  ac78xx_timer.o(i.TIMER2_IRQHandler)
-    i.TIMER3_IRQHandler                      0x080023c4   Section        0  ac78xx_timer.o(i.TIMER3_IRQHandler)
-    i.TIMER4_IRQHandler                      0x080023dc   Section        0  ac78xx_timer.o(i.TIMER4_IRQHandler)
-    i.TIMER5_IRQHandler                      0x080023f4   Section        0  ac78xx_timer.o(i.TIMER5_IRQHandler)
-    i.TIMER6_IRQHandler                      0x0800240c   Section        0  ac78xx_timer.o(i.TIMER6_IRQHandler)
-    i.TIMER7_IRQHandler                      0x08002424   Section        0  ac78xx_timer.o(i.TIMER7_IRQHandler)
-    i.TIMER_ClrIntFlag                       0x0800243c   Section        0  ac78xx_timer.o(i.TIMER_ClrIntFlag)
-    i.TIMER_GetIntFlag                       0x08002446   Section        0  ac78xx_timer.o(i.TIMER_GetIntFlag)
-    i.TIMER_Init                             0x08002450   Section        0  ac78xx_timer.o(i.TIMER_Init)
-    i.TIMER_ModuleEnable                     0x080024ec   Section        0  ac78xx_timer.o(i.TIMER_ModuleEnable)
-    i.TIMER_SetCallback                      0x0800250c   Section        0  ac78xx_timer.o(i.TIMER_SetCallback)
-    i.TaskProcess                            0x08002524   Section        0  round_robin_sche.o(i.TaskProcess)
-    i.TaskRemarks                            0x08002560   Section        0  round_robin_sche.o(i.TaskRemarks)
-    i.Task_Screen                            0x080025c4   Section        0  demo.o(i.Task_Screen)
-    i.Task_Wait_One_Frame                    0x080025e4   Section        0  timer.o(i.Task_Wait_One_Frame)
-    i.Task_Wait_Respond_Timeout              0x08002620   Section        0  timer.o(i.Task_Wait_Respond_Timeout)
-    i.Timer_Init                             0x08002650   Section        0  timer.o(i.Timer_Init)
-    i.UART1_IRQHandler                       0x0800268c   Section        0  ac78xx_uart.o(i.UART1_IRQHandler)
-    i.UART2_IRQHandler                       0x08002696   Section        0  ac78xx_uart.o(i.UART2_IRQHandler)
-    i.UART3_IRQHandler                       0x080026a0   Section        0  ac78xx_uart.o(i.UART3_IRQHandler)
-    i.UART4_IRQHandler                       0x080026aa   Section        0  ac78xx_uart.o(i.UART4_IRQHandler)
-    i.UART5_IRQHandler                       0x080026b4   Section        0  ac78xx_uart.o(i.UART5_IRQHandler)
-    i.UART5_SendString                       0x080026c0   Section        0  rs485_driver.o(i.UART5_SendString)
-    i.UART6_IRQHandler                       0x0800271c   Section        0  ac78xx_uart.o(i.UART6_IRQHandler)
-    i.UART_IRQHandler                        0x08002728   Section        0  rs485_driver.o(i.UART_IRQHandler)
-    i.UART_Init                              0x080027e8   Section        0  ac78xx_uart.o(i.UART_Init)
-    i.UART_InterruptHandler                  0x0800292c   Section        0  ac78xx_uart.o(i.UART_InterruptHandler)
-    UART_InterruptHandler                    0x0800292d   Thumb Code    68  ac78xx_uart.o(i.UART_InterruptHandler)
-    i.UART_SendData                          0x08002978   Section        0  dmg80480c043_01wtc.o(i.UART_SendData)
-    UART_SendData                            0x08002979   Thumb Code    44  dmg80480c043_01wtc.o(i.UART_SendData)
-    i.UART_SetBaudrate                       0x080029a4   Section        0  ac78xx_uart.o(i.UART_SetBaudrate)
-    i.UART_SetDataBits                       0x08002a70   Section        0  ac78xx_uart.o(i.UART_SetDataBits)
-    UART_SetDataBits                         0x08002a71   Thumb Code   120  ac78xx_uart.o(i.UART_SetDataBits)
-    i.UART_SetEventCallback                  0x08002ae8   Section        0  ac78xx_uart.o(i.UART_SetEventCallback)
-    i.UART_SetParity                         0x08002b20   Section        0  ac78xx_uart.o(i.UART_SetParity)
-    UART_SetParity                           0x08002b21   Thumb Code   102  ac78xx_uart.o(i.UART_SetParity)
-    i.Uart6_IRQHandler                       0x08002b88   Section        0  dmg80480c043_01wtc.o(i.Uart6_IRQHandler)
-    i.VarMalloc                              0x08002c28   Section        0  varmalloc.o(i.VarMalloc)
-    i.Watchdog_IRQHandler                    0x08002c60   Section        0  ac78xx_wdg.o(i.Watchdog_IRQHandler)
-    i.WriteBitsValue                         0x08002c8c   Section        0  system_ac78xx.o(i.WriteBitsValue)
-    i.__0printf$5                            0x08002cac   Section        0  printf5.o(i.__0printf$5)
-    i.__NVIC_DisableIRQ                      0x08002ccc   Section        0  ac78xx_timer.o(i.__NVIC_DisableIRQ)
-    __NVIC_DisableIRQ                        0x08002ccd   Thumb Code    30  ac78xx_timer.o(i.__NVIC_DisableIRQ)
-    i.__scatterload_copy                     0x08002cf0   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08002cfe   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08002d00   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x08002d10   Section        0  printf5.o(i._printf_core)
-    _printf_core                             0x08002d11   Thumb Code   660  printf5.o(i._printf_core)
-    i.fputc                                  0x08002fd0   Section        0  ac78xx_debugout.o(i.fputc)
-    i.itoa                                   0x08003010   Section        0  dmg80480c043_01wtc.o(i.itoa)
-    i.main                                   0x08003072   Section        0  main.o(i.main)
-    i.malloc                                 0x08003094   Section        0  malloc.o(i.malloc)
-    i.mdelay                                 0x08003100   Section        0  system_ac78xx.o(i.mdelay)
-    i.udelay                                 0x08003124   Section        0  system_ac78xx.o(i.udelay)
-    .constdata                               0x08003148   Section      560  ac78xx_gpio.o(.constdata)
-    s_gpioPinmuxTable                        0x08003148   Data         560  ac78xx_gpio.o(.constdata)
-    .constdata                               0x08003378   Section       40  ac78xx_timer.o(.constdata)
-    s_timerCtrlMap                           0x08003378   Data          32  ac78xx_timer.o(.constdata)
-    s_timerIrqnCtrlMap                       0x08003398   Data           8  ac78xx_timer.o(.constdata)
-    .constdata                               0x080033a0   Section       96  ac78xx_uart.o(.constdata)
-    s_uartCtrlMap                            0x080033a0   Data          24  ac78xx_uart.o(.constdata)
+    i.Show_Torsional_Value_Task              0x080021d4   Section        0  demo.o(i.Show_Torsional_Value_Task)
+    i.Speaker_Task                           0x08002214   Section        0  demo.o(i.Speaker_Task)
+    i.Sustain_CeilingLed_ON                  0x08002284   Section        0  workmode.o(i.Sustain_CeilingLed_ON)
+    i.Sustain_FloorLed_ON                    0x080022c0   Section        0  workmode.o(i.Sustain_FloorLed_ON)
+    i.SysTickDelay                           0x080022fc   Section        0  system_ac78xx.o(i.SysTickDelay)
+    SysTickDelay                             0x080022fd   Thumb Code    64  system_ac78xx.o(i.SysTickDelay)
+    i.SysTickRepeatDelay                     0x0800233c   Section        0  system_ac78xx.o(i.SysTickRepeatDelay)
+    SysTickRepeatDelay                       0x0800233d   Thumb Code    26  system_ac78xx.o(i.SysTickRepeatDelay)
+    i.SystemInit                             0x08002356   Section        0  system_ac78xx.o(i.SystemInit)
+    i.TIM1_Task                              0x08002370   Section        0  timer.o(i.TIM1_Task)
+    i.TIMER0_IRQHandler                      0x08002398   Section        0  ac78xx_timer.o(i.TIMER0_IRQHandler)
+    i.TIMER1_IRQHandler                      0x080023b0   Section        0  ac78xx_timer.o(i.TIMER1_IRQHandler)
+    i.TIMER2_IRQHandler                      0x080023c8   Section        0  ac78xx_timer.o(i.TIMER2_IRQHandler)
+    i.TIMER3_IRQHandler                      0x080023e0   Section        0  ac78xx_timer.o(i.TIMER3_IRQHandler)
+    i.TIMER4_IRQHandler                      0x080023f8   Section        0  ac78xx_timer.o(i.TIMER4_IRQHandler)
+    i.TIMER5_IRQHandler                      0x08002410   Section        0  ac78xx_timer.o(i.TIMER5_IRQHandler)
+    i.TIMER6_IRQHandler                      0x08002428   Section        0  ac78xx_timer.o(i.TIMER6_IRQHandler)
+    i.TIMER7_IRQHandler                      0x08002440   Section        0  ac78xx_timer.o(i.TIMER7_IRQHandler)
+    i.TIMER_ClrIntFlag                       0x08002458   Section        0  ac78xx_timer.o(i.TIMER_ClrIntFlag)
+    i.TIMER_GetIntFlag                       0x08002462   Section        0  ac78xx_timer.o(i.TIMER_GetIntFlag)
+    i.TIMER_Init                             0x0800246c   Section        0  ac78xx_timer.o(i.TIMER_Init)
+    i.TIMER_ModuleEnable                     0x08002508   Section        0  ac78xx_timer.o(i.TIMER_ModuleEnable)
+    i.TIMER_SetCallback                      0x08002528   Section        0  ac78xx_timer.o(i.TIMER_SetCallback)
+    i.TaskProcess                            0x08002540   Section        0  round_robin_sche.o(i.TaskProcess)
+    i.TaskRemarks                            0x0800257c   Section        0  round_robin_sche.o(i.TaskRemarks)
+    i.Task_Screen                            0x080025e0   Section        0  demo.o(i.Task_Screen)
+    i.Task_Wait_One_Frame                    0x08002600   Section        0  timer.o(i.Task_Wait_One_Frame)
+    i.Task_Wait_Respond_Timeout              0x0800263c   Section        0  timer.o(i.Task_Wait_Respond_Timeout)
+    i.Timer_Init                             0x0800266c   Section        0  timer.o(i.Timer_Init)
+    i.UART1_IRQHandler                       0x080026a8   Section        0  ac78xx_uart.o(i.UART1_IRQHandler)
+    i.UART2_IRQHandler                       0x080026b2   Section        0  ac78xx_uart.o(i.UART2_IRQHandler)
+    i.UART3_IRQHandler                       0x080026bc   Section        0  ac78xx_uart.o(i.UART3_IRQHandler)
+    i.UART4_IRQHandler                       0x080026c6   Section        0  ac78xx_uart.o(i.UART4_IRQHandler)
+    i.UART5_IRQHandler                       0x080026d0   Section        0  ac78xx_uart.o(i.UART5_IRQHandler)
+    i.UART5_SendString                       0x080026dc   Section        0  rs485_driver.o(i.UART5_SendString)
+    i.UART6_IRQHandler                       0x08002738   Section        0  ac78xx_uart.o(i.UART6_IRQHandler)
+    i.UART_IRQHandler                        0x08002744   Section        0  rs485_driver.o(i.UART_IRQHandler)
+    i.UART_Init                              0x08002804   Section        0  ac78xx_uart.o(i.UART_Init)
+    i.UART_InterruptHandler                  0x08002948   Section        0  ac78xx_uart.o(i.UART_InterruptHandler)
+    UART_InterruptHandler                    0x08002949   Thumb Code    68  ac78xx_uart.o(i.UART_InterruptHandler)
+    i.UART_SendData                          0x08002994   Section        0  dmg80480c043_01wtc.o(i.UART_SendData)
+    UART_SendData                            0x08002995   Thumb Code    44  dmg80480c043_01wtc.o(i.UART_SendData)
+    i.UART_SetBaudrate                       0x080029c0   Section        0  ac78xx_uart.o(i.UART_SetBaudrate)
+    i.UART_SetDataBits                       0x08002a8c   Section        0  ac78xx_uart.o(i.UART_SetDataBits)
+    UART_SetDataBits                         0x08002a8d   Thumb Code   120  ac78xx_uart.o(i.UART_SetDataBits)
+    i.UART_SetEventCallback                  0x08002b04   Section        0  ac78xx_uart.o(i.UART_SetEventCallback)
+    i.UART_SetParity                         0x08002b3c   Section        0  ac78xx_uart.o(i.UART_SetParity)
+    UART_SetParity                           0x08002b3d   Thumb Code   102  ac78xx_uart.o(i.UART_SetParity)
+    i.Uart6_IRQHandler                       0x08002ba4   Section        0  dmg80480c043_01wtc.o(i.Uart6_IRQHandler)
+    i.VarMalloc                              0x08002c44   Section        0  varmalloc.o(i.VarMalloc)
+    i.Watchdog_IRQHandler                    0x08002c7c   Section        0  ac78xx_wdg.o(i.Watchdog_IRQHandler)
+    i.WriteBitsValue                         0x08002ca8   Section        0  system_ac78xx.o(i.WriteBitsValue)
+    i.__0printf$5                            0x08002cc8   Section        0  printf5.o(i.__0printf$5)
+    i.__NVIC_DisableIRQ                      0x08002ce8   Section        0  ac78xx_timer.o(i.__NVIC_DisableIRQ)
+    __NVIC_DisableIRQ                        0x08002ce9   Thumb Code    30  ac78xx_timer.o(i.__NVIC_DisableIRQ)
+    i.__scatterload_copy                     0x08002d0c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08002d1a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08002d1c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x08002d2c   Section        0  printf5.o(i._printf_core)
+    _printf_core                             0x08002d2d   Thumb Code   660  printf5.o(i._printf_core)
+    i.fputc                                  0x08002fec   Section        0  ac78xx_debugout.o(i.fputc)
+    i.itoa                                   0x0800302c   Section        0  dmg80480c043_01wtc.o(i.itoa)
+    i.main                                   0x0800308e   Section        0  main.o(i.main)
+    i.malloc                                 0x080030b0   Section        0  malloc.o(i.malloc)
+    i.mdelay                                 0x0800311c   Section        0  system_ac78xx.o(i.mdelay)
+    i.udelay                                 0x08003140   Section        0  system_ac78xx.o(i.udelay)
+    .constdata                               0x08003164   Section      560  ac78xx_gpio.o(.constdata)
+    s_gpioPinmuxTable                        0x08003164   Data         560  ac78xx_gpio.o(.constdata)
+    .constdata                               0x08003394   Section       40  ac78xx_timer.o(.constdata)
+    s_timerCtrlMap                           0x08003394   Data          32  ac78xx_timer.o(.constdata)
+    s_timerIrqnCtrlMap                       0x080033b4   Data           8  ac78xx_timer.o(.constdata)
+    .constdata                               0x080033bc   Section       96  ac78xx_uart.o(.constdata)
+    s_uartCtrlMap                            0x080033bc   Data          24  ac78xx_uart.o(.constdata)
     .data                                    0x20000000   Section        2  led.o(.data)
     counter                                  0x20000001   Data           1  led.o(.data)
     .data                                    0x20000004   Section       84  round_robin_sche.o(.data)
@@ -2256,62 +2258,62 @@ Image Symbol Table
     SetEflashClock                           0x080020b5   Thumb Code   100  system_ac78xx.o(i.SetEflashClock)
     SetHSEClock                              0x08002125   Thumb Code   100  system_ac78xx.o(i.SetHSEClock)
     SetSysClock                              0x08002189   Thumb Code     8  system_ac78xx.o(i.SetSysClock)
-    Show_Ceiling_Floor_Value_Task            0x08002191   Thumb Code    52  demo.o(i.Show_Ceiling_Floor_Value_Task)
-    Show_Torsional_Value_Task                0x080021cd   Thumb Code    38  demo.o(i.Show_Torsional_Value_Task)
-    Speaker_Task                             0x080021f9   Thumb Code    92  demo.o(i.Speaker_Task)
-    Sustain_CeilingLed_ON                    0x08002269   Thumb Code    46  workmode.o(i.Sustain_CeilingLed_ON)
-    Sustain_FloorLed_ON                      0x080022a5   Thumb Code    46  workmode.o(i.Sustain_FloorLed_ON)
-    SystemInit                               0x0800233b   Thumb Code    26  system_ac78xx.o(i.SystemInit)
-    TIM1_Task                                0x08002355   Thumb Code    36  timer.o(i.TIM1_Task)
-    TIMER0_IRQHandler                        0x0800237d   Thumb Code    18  ac78xx_timer.o(i.TIMER0_IRQHandler)
-    TIMER1_IRQHandler                        0x08002395   Thumb Code    18  ac78xx_timer.o(i.TIMER1_IRQHandler)
-    TIMER2_IRQHandler                        0x080023ad   Thumb Code    18  ac78xx_timer.o(i.TIMER2_IRQHandler)
-    TIMER3_IRQHandler                        0x080023c5   Thumb Code    18  ac78xx_timer.o(i.TIMER3_IRQHandler)
-    TIMER4_IRQHandler                        0x080023dd   Thumb Code    18  ac78xx_timer.o(i.TIMER4_IRQHandler)
-    TIMER5_IRQHandler                        0x080023f5   Thumb Code    18  ac78xx_timer.o(i.TIMER5_IRQHandler)
-    TIMER6_IRQHandler                        0x0800240d   Thumb Code    18  ac78xx_timer.o(i.TIMER6_IRQHandler)
-    TIMER7_IRQHandler                        0x08002425   Thumb Code    18  ac78xx_timer.o(i.TIMER7_IRQHandler)
-    TIMER_ClrIntFlag                         0x0800243d   Thumb Code    10  ac78xx_timer.o(i.TIMER_ClrIntFlag)
-    TIMER_GetIntFlag                         0x08002447   Thumb Code    10  ac78xx_timer.o(i.TIMER_GetIntFlag)
-    TIMER_Init                               0x08002451   Thumb Code   144  ac78xx_timer.o(i.TIMER_Init)
-    TIMER_ModuleEnable                       0x080024ed   Thumb Code    26  ac78xx_timer.o(i.TIMER_ModuleEnable)
-    TIMER_SetCallback                        0x0800250d   Thumb Code    14  ac78xx_timer.o(i.TIMER_SetCallback)
-    TaskProcess                              0x08002525   Thumb Code    54  round_robin_sche.o(i.TaskProcess)
-    TaskRemarks                              0x08002561   Thumb Code    96  round_robin_sche.o(i.TaskRemarks)
-    Task_Screen                              0x080025c5   Thumb Code    28  demo.o(i.Task_Screen)
-    Task_Wait_One_Frame                      0x080025e5   Thumb Code    56  timer.o(i.Task_Wait_One_Frame)
-    Task_Wait_Respond_Timeout                0x08002621   Thumb Code    42  timer.o(i.Task_Wait_Respond_Timeout)
-    Timer_Init                               0x08002651   Thumb Code    50  timer.o(i.Timer_Init)
-    UART1_IRQHandler                         0x0800268d   Thumb Code    10  ac78xx_uart.o(i.UART1_IRQHandler)
-    UART2_IRQHandler                         0x08002697   Thumb Code    10  ac78xx_uart.o(i.UART2_IRQHandler)
-    UART3_IRQHandler                         0x080026a1   Thumb Code    10  ac78xx_uart.o(i.UART3_IRQHandler)
-    UART4_IRQHandler                         0x080026ab   Thumb Code    10  ac78xx_uart.o(i.UART4_IRQHandler)
-    UART5_IRQHandler                         0x080026b5   Thumb Code    10  ac78xx_uart.o(i.UART5_IRQHandler)
-    UART5_SendString                         0x080026c1   Thumb Code    88  rs485_driver.o(i.UART5_SendString)
-    UART6_IRQHandler                         0x0800271d   Thumb Code    10  ac78xx_uart.o(i.UART6_IRQHandler)
-    UART_IRQHandler                          0x08002729   Thumb Code   170  rs485_driver.o(i.UART_IRQHandler)
-    UART_Init                                0x080027e9   Thumb Code   314  ac78xx_uart.o(i.UART_Init)
-    UART_SetBaudrate                         0x080029a5   Thumb Code   200  ac78xx_uart.o(i.UART_SetBaudrate)
-    UART_SetEventCallback                    0x08002ae9   Thumb Code    46  ac78xx_uart.o(i.UART_SetEventCallback)
-    Uart6_IRQHandler                         0x08002b89   Thumb Code   148  dmg80480c043_01wtc.o(i.Uart6_IRQHandler)
-    VarMalloc                                0x08002c29   Thumb Code    50  varmalloc.o(i.VarMalloc)
-    Watchdog_IRQHandler                      0x08002c61   Thumb Code    36  ac78xx_wdg.o(i.Watchdog_IRQHandler)
-    WriteBitsValue                           0x08002c8d   Thumb Code    30  system_ac78xx.o(i.WriteBitsValue)
-    __0printf$5                              0x08002cad   Thumb Code    22  printf5.o(i.__0printf$5)
-    __1printf$5                              0x08002cad   Thumb Code     0  printf5.o(i.__0printf$5)
-    __2printf                                0x08002cad   Thumb Code     0  printf5.o(i.__0printf$5)
-    __scatterload_copy                       0x08002cf1   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08002cff   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08002d01   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    fputc                                    0x08002fd1   Thumb Code    54  ac78xx_debugout.o(i.fputc)
-    itoa                                     0x08003011   Thumb Code    98  dmg80480c043_01wtc.o(i.itoa)
-    main                                     0x08003073   Thumb Code    32  main.o(i.main)
-    malloc                                   0x08003095   Thumb Code    92  malloc.o(i.malloc)
-    mdelay                                   0x08003101   Thumb Code    32  system_ac78xx.o(i.mdelay)
-    udelay                                   0x08003125   Thumb Code    32  system_ac78xx.o(i.udelay)
-    g_uartDMAChannel                         0x080033b8   Data          72  ac78xx_uart.o(.constdata)
-    Region$$Table$$Base                      0x08003400   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08003420   Number         0  anon$$obj.o(Region$$Table)
+    Show_Ceiling_Floor_Value_Task            0x08002191   Thumb Code    60  demo.o(i.Show_Ceiling_Floor_Value_Task)
+    Show_Torsional_Value_Task                0x080021d5   Thumb Code    56  demo.o(i.Show_Torsional_Value_Task)
+    Speaker_Task                             0x08002215   Thumb Code    92  demo.o(i.Speaker_Task)
+    Sustain_CeilingLed_ON                    0x08002285   Thumb Code    46  workmode.o(i.Sustain_CeilingLed_ON)
+    Sustain_FloorLed_ON                      0x080022c1   Thumb Code    46  workmode.o(i.Sustain_FloorLed_ON)
+    SystemInit                               0x08002357   Thumb Code    26  system_ac78xx.o(i.SystemInit)
+    TIM1_Task                                0x08002371   Thumb Code    36  timer.o(i.TIM1_Task)
+    TIMER0_IRQHandler                        0x08002399   Thumb Code    18  ac78xx_timer.o(i.TIMER0_IRQHandler)
+    TIMER1_IRQHandler                        0x080023b1   Thumb Code    18  ac78xx_timer.o(i.TIMER1_IRQHandler)
+    TIMER2_IRQHandler                        0x080023c9   Thumb Code    18  ac78xx_timer.o(i.TIMER2_IRQHandler)
+    TIMER3_IRQHandler                        0x080023e1   Thumb Code    18  ac78xx_timer.o(i.TIMER3_IRQHandler)
+    TIMER4_IRQHandler                        0x080023f9   Thumb Code    18  ac78xx_timer.o(i.TIMER4_IRQHandler)
+    TIMER5_IRQHandler                        0x08002411   Thumb Code    18  ac78xx_timer.o(i.TIMER5_IRQHandler)
+    TIMER6_IRQHandler                        0x08002429   Thumb Code    18  ac78xx_timer.o(i.TIMER6_IRQHandler)
+    TIMER7_IRQHandler                        0x08002441   Thumb Code    18  ac78xx_timer.o(i.TIMER7_IRQHandler)
+    TIMER_ClrIntFlag                         0x08002459   Thumb Code    10  ac78xx_timer.o(i.TIMER_ClrIntFlag)
+    TIMER_GetIntFlag                         0x08002463   Thumb Code    10  ac78xx_timer.o(i.TIMER_GetIntFlag)
+    TIMER_Init                               0x0800246d   Thumb Code   144  ac78xx_timer.o(i.TIMER_Init)
+    TIMER_ModuleEnable                       0x08002509   Thumb Code    26  ac78xx_timer.o(i.TIMER_ModuleEnable)
+    TIMER_SetCallback                        0x08002529   Thumb Code    14  ac78xx_timer.o(i.TIMER_SetCallback)
+    TaskProcess                              0x08002541   Thumb Code    54  round_robin_sche.o(i.TaskProcess)
+    TaskRemarks                              0x0800257d   Thumb Code    96  round_robin_sche.o(i.TaskRemarks)
+    Task_Screen                              0x080025e1   Thumb Code    28  demo.o(i.Task_Screen)
+    Task_Wait_One_Frame                      0x08002601   Thumb Code    56  timer.o(i.Task_Wait_One_Frame)
+    Task_Wait_Respond_Timeout                0x0800263d   Thumb Code    42  timer.o(i.Task_Wait_Respond_Timeout)
+    Timer_Init                               0x0800266d   Thumb Code    50  timer.o(i.Timer_Init)
+    UART1_IRQHandler                         0x080026a9   Thumb Code    10  ac78xx_uart.o(i.UART1_IRQHandler)
+    UART2_IRQHandler                         0x080026b3   Thumb Code    10  ac78xx_uart.o(i.UART2_IRQHandler)
+    UART3_IRQHandler                         0x080026bd   Thumb Code    10  ac78xx_uart.o(i.UART3_IRQHandler)
+    UART4_IRQHandler                         0x080026c7   Thumb Code    10  ac78xx_uart.o(i.UART4_IRQHandler)
+    UART5_IRQHandler                         0x080026d1   Thumb Code    10  ac78xx_uart.o(i.UART5_IRQHandler)
+    UART5_SendString                         0x080026dd   Thumb Code    88  rs485_driver.o(i.UART5_SendString)
+    UART6_IRQHandler                         0x08002739   Thumb Code    10  ac78xx_uart.o(i.UART6_IRQHandler)
+    UART_IRQHandler                          0x08002745   Thumb Code   170  rs485_driver.o(i.UART_IRQHandler)
+    UART_Init                                0x08002805   Thumb Code   314  ac78xx_uart.o(i.UART_Init)
+    UART_SetBaudrate                         0x080029c1   Thumb Code   200  ac78xx_uart.o(i.UART_SetBaudrate)
+    UART_SetEventCallback                    0x08002b05   Thumb Code    46  ac78xx_uart.o(i.UART_SetEventCallback)
+    Uart6_IRQHandler                         0x08002ba5   Thumb Code   148  dmg80480c043_01wtc.o(i.Uart6_IRQHandler)
+    VarMalloc                                0x08002c45   Thumb Code    50  varmalloc.o(i.VarMalloc)
+    Watchdog_IRQHandler                      0x08002c7d   Thumb Code    36  ac78xx_wdg.o(i.Watchdog_IRQHandler)
+    WriteBitsValue                           0x08002ca9   Thumb Code    30  system_ac78xx.o(i.WriteBitsValue)
+    __0printf$5                              0x08002cc9   Thumb Code    22  printf5.o(i.__0printf$5)
+    __1printf$5                              0x08002cc9   Thumb Code     0  printf5.o(i.__0printf$5)
+    __2printf                                0x08002cc9   Thumb Code     0  printf5.o(i.__0printf$5)
+    __scatterload_copy                       0x08002d0d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08002d1b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08002d1d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    fputc                                    0x08002fed   Thumb Code    54  ac78xx_debugout.o(i.fputc)
+    itoa                                     0x0800302d   Thumb Code    98  dmg80480c043_01wtc.o(i.itoa)
+    main                                     0x0800308f   Thumb Code    32  main.o(i.main)
+    malloc                                   0x080030b1   Thumb Code    92  malloc.o(i.malloc)
+    mdelay                                   0x0800311d   Thumb Code    32  system_ac78xx.o(i.mdelay)
+    udelay                                   0x08003141   Thumb Code    32  system_ac78xx.o(i.udelay)
+    g_uartDMAChannel                         0x080033d4   Data          72  ac78xx_uart.o(.constdata)
+    Region$$Table$$Base                      0x0800341c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0800343c   Number         0  anon$$obj.o(Region$$Table)
     count                                    0x20000000   Data           1  led.o(.data)
     rx5Buf                                   0x20000058   Data           1  rs485_driver.o(.data)
     ReadMeasuredValue                        0x2000005c   Data           8  demo.o(.data)
@@ -2376,9 +2378,9 @@ Memory Map of the image
 
   Image Entry point : 0x0800011d
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003564, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003478])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003580, Max: 0x00040000, ABSOLUTE, COMPRESSED[0x00003494])
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00003420, Max: 0x00040000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000343c, Max: 0x00040000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2507,78 +2509,78 @@ Memory Map of the image
     0x080020b4   0x080020b4   0x00000070   Code   RO         3541    i.SetEflashClock    system_ac78xx.o
     0x08002124   0x08002124   0x00000064   Code   RO         3543    i.SetHSEClock       system_ac78xx.o
     0x08002188   0x08002188   0x00000008   Code   RO         3545    i.SetSysClock       system_ac78xx.o
-    0x08002190   0x08002190   0x0000003c   Code   RO          304    i.Show_Ceiling_Floor_Value_Task  demo.o
-    0x080021cc   0x080021cc   0x0000002c   Code   RO          305    i.Show_Torsional_Value_Task  demo.o
-    0x080021f8   0x080021f8   0x00000070   Code   RO          306    i.Speaker_Task      demo.o
-    0x08002268   0x08002268   0x0000003c   Code   RO          369    i.Sustain_CeilingLed_ON  workmode.o
-    0x080022a4   0x080022a4   0x0000003c   Code   RO          370    i.Sustain_FloorLed_ON  workmode.o
-    0x080022e0   0x080022e0   0x00000040   Code   RO         3551    i.SysTickDelay      system_ac78xx.o
-    0x08002320   0x08002320   0x0000001a   Code   RO         3552    i.SysTickRepeatDelay  system_ac78xx.o
-    0x0800233a   0x0800233a   0x0000001a   Code   RO         3553    i.SystemInit        system_ac78xx.o
-    0x08002354   0x08002354   0x00000028   Code   RO          156    i.TIM1_Task         timer.o
-    0x0800237c   0x0800237c   0x00000018   Code   RO         2750    i.TIMER0_IRQHandler  ac78xx_timer.o
-    0x08002394   0x08002394   0x00000018   Code   RO         2751    i.TIMER1_IRQHandler  ac78xx_timer.o
-    0x080023ac   0x080023ac   0x00000018   Code   RO         2752    i.TIMER2_IRQHandler  ac78xx_timer.o
-    0x080023c4   0x080023c4   0x00000018   Code   RO         2753    i.TIMER3_IRQHandler  ac78xx_timer.o
-    0x080023dc   0x080023dc   0x00000018   Code   RO         2754    i.TIMER4_IRQHandler  ac78xx_timer.o
-    0x080023f4   0x080023f4   0x00000018   Code   RO         2755    i.TIMER5_IRQHandler  ac78xx_timer.o
-    0x0800240c   0x0800240c   0x00000018   Code   RO         2756    i.TIMER6_IRQHandler  ac78xx_timer.o
-    0x08002424   0x08002424   0x00000018   Code   RO         2757    i.TIMER7_IRQHandler  ac78xx_timer.o
-    0x0800243c   0x0800243c   0x0000000a   Code   RO         2758    i.TIMER_ClrIntFlag  ac78xx_timer.o
-    0x08002446   0x08002446   0x0000000a   Code   RO         2760    i.TIMER_GetIntFlag  ac78xx_timer.o
-    0x08002450   0x08002450   0x0000009c   Code   RO         2762    i.TIMER_Init        ac78xx_timer.o
-    0x080024ec   0x080024ec   0x00000020   Code   RO         2764    i.TIMER_ModuleEnable  ac78xx_timer.o
-    0x0800250c   0x0800250c   0x00000018   Code   RO         2765    i.TIMER_SetCallback  ac78xx_timer.o
-    0x08002524   0x08002524   0x0000003c   Code   RO          207    i.TaskProcess       round_robin_sche.o
-    0x08002560   0x08002560   0x00000064   Code   RO          208    i.TaskRemarks       round_robin_sche.o
-    0x080025c4   0x080025c4   0x00000020   Code   RO          307    i.Task_Screen       demo.o
-    0x080025e4   0x080025e4   0x0000003c   Code   RO          157    i.Task_Wait_One_Frame  timer.o
-    0x08002620   0x08002620   0x00000030   Code   RO          158    i.Task_Wait_Respond_Timeout  timer.o
-    0x08002650   0x08002650   0x0000003c   Code   RO          159    i.Timer_Init        timer.o
-    0x0800268c   0x0800268c   0x0000000a   Code   RO         2884    i.UART1_IRQHandler  ac78xx_uart.o
-    0x08002696   0x08002696   0x0000000a   Code   RO         2885    i.UART2_IRQHandler  ac78xx_uart.o
-    0x080026a0   0x080026a0   0x0000000a   Code   RO         2886    i.UART3_IRQHandler  ac78xx_uart.o
-    0x080026aa   0x080026aa   0x0000000a   Code   RO         2887    i.UART4_IRQHandler  ac78xx_uart.o
-    0x080026b4   0x080026b4   0x0000000a   Code   RO         2888    i.UART5_IRQHandler  ac78xx_uart.o
-    0x080026be   0x080026be   0x00000002   PAD
-    0x080026c0   0x080026c0   0x0000005c   Code   RO          244    i.UART5_SendString  rs485_driver.o
-    0x0800271c   0x0800271c   0x0000000a   Code   RO         2889    i.UART6_IRQHandler  ac78xx_uart.o
-    0x08002726   0x08002726   0x00000002   PAD
-    0x08002728   0x08002728   0x000000c0   Code   RO          245    i.UART_IRQHandler   rs485_driver.o
-    0x080027e8   0x080027e8   0x00000144   Code   RO         2893    i.UART_Init         ac78xx_uart.o
-    0x0800292c   0x0800292c   0x0000004c   Code   RO         2894    i.UART_InterruptHandler  ac78xx_uart.o
-    0x08002978   0x08002978   0x0000002c   Code   RO          440    i.UART_SendData     dmg80480c043_01wtc.o
-    0x080029a4   0x080029a4   0x000000cc   Code   RO         2895    i.UART_SetBaudrate  ac78xx_uart.o
-    0x08002a70   0x08002a70   0x00000078   Code   RO         2896    i.UART_SetDataBits  ac78xx_uart.o
-    0x08002ae8   0x08002ae8   0x00000038   Code   RO         2897    i.UART_SetEventCallback  ac78xx_uart.o
-    0x08002b20   0x08002b20   0x00000066   Code   RO         2898    i.UART_SetParity    ac78xx_uart.o
-    0x08002b86   0x08002b86   0x00000002   PAD
-    0x08002b88   0x08002b88   0x000000a0   Code   RO          441    i.Uart6_IRQHandler  dmg80480c043_01wtc.o
-    0x08002c28   0x08002c28   0x00000038   Code   RO          540    i.VarMalloc         varmalloc.o
-    0x08002c60   0x08002c60   0x0000002c   Code   RO         3048    i.Watchdog_IRQHandler  ac78xx_wdg.o
-    0x08002c8c   0x08002c8c   0x0000001e   Code   RO         3554    i.WriteBitsValue    system_ac78xx.o
-    0x08002caa   0x08002caa   0x00000002   PAD
-    0x08002cac   0x08002cac   0x00000020   Code   RO         3850    i.__0printf$5       mc_w.l(printf5.o)
-    0x08002ccc   0x08002ccc   0x00000024   Code   RO         2767    i.__NVIC_DisableIRQ  ac78xx_timer.o
-    0x08002cf0   0x08002cf0   0x0000000e   Code   RO         4071    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002cfe   0x08002cfe   0x00000002   Code   RO         4072    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002d00   0x08002d00   0x0000000e   Code   RO         4073    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08002d0e   0x08002d0e   0x00000002   PAD
-    0x08002d10   0x08002d10   0x000002c0   Code   RO         3857    i._printf_core      mc_w.l(printf5.o)
-    0x08002fd0   0x08002fd0   0x00000040   Code   RO          598    i.fputc             ac78xx_debugout.o
-    0x08003010   0x08003010   0x00000062   Code   RO          442    i.itoa              dmg80480c043_01wtc.o
-    0x08003072   0x08003072   0x00000020   Code   RO            4    i.main              main.o
-    0x08003092   0x08003092   0x00000002   PAD
-    0x08003094   0x08003094   0x0000006c   Code   RO         3979    i.malloc            mc_w.l(malloc.o)
-    0x08003100   0x08003100   0x00000024   Code   RO         3556    i.mdelay            system_ac78xx.o
-    0x08003124   0x08003124   0x00000024   Code   RO         3557    i.udelay            system_ac78xx.o
-    0x08003148   0x08003148   0x00000230   Data   RO         1336    .constdata          ac78xx_gpio.o
-    0x08003378   0x08003378   0x00000028   Data   RO         2769    .constdata          ac78xx_timer.o
-    0x080033a0   0x080033a0   0x00000060   Data   RO         2907    .constdata          ac78xx_uart.o
-    0x08003400   0x08003400   0x00000020   Data   RO         4069    Region$$Table       anon$$obj.o
+    0x08002190   0x08002190   0x00000044   Code   RO          304    i.Show_Ceiling_Floor_Value_Task  demo.o
+    0x080021d4   0x080021d4   0x00000040   Code   RO          305    i.Show_Torsional_Value_Task  demo.o
+    0x08002214   0x08002214   0x00000070   Code   RO          306    i.Speaker_Task      demo.o
+    0x08002284   0x08002284   0x0000003c   Code   RO          369    i.Sustain_CeilingLed_ON  workmode.o
+    0x080022c0   0x080022c0   0x0000003c   Code   RO          370    i.Sustain_FloorLed_ON  workmode.o
+    0x080022fc   0x080022fc   0x00000040   Code   RO         3551    i.SysTickDelay      system_ac78xx.o
+    0x0800233c   0x0800233c   0x0000001a   Code   RO         3552    i.SysTickRepeatDelay  system_ac78xx.o
+    0x08002356   0x08002356   0x0000001a   Code   RO         3553    i.SystemInit        system_ac78xx.o
+    0x08002370   0x08002370   0x00000028   Code   RO          156    i.TIM1_Task         timer.o
+    0x08002398   0x08002398   0x00000018   Code   RO         2750    i.TIMER0_IRQHandler  ac78xx_timer.o
+    0x080023b0   0x080023b0   0x00000018   Code   RO         2751    i.TIMER1_IRQHandler  ac78xx_timer.o
+    0x080023c8   0x080023c8   0x00000018   Code   RO         2752    i.TIMER2_IRQHandler  ac78xx_timer.o
+    0x080023e0   0x080023e0   0x00000018   Code   RO         2753    i.TIMER3_IRQHandler  ac78xx_timer.o
+    0x080023f8   0x080023f8   0x00000018   Code   RO         2754    i.TIMER4_IRQHandler  ac78xx_timer.o
+    0x08002410   0x08002410   0x00000018   Code   RO         2755    i.TIMER5_IRQHandler  ac78xx_timer.o
+    0x08002428   0x08002428   0x00000018   Code   RO         2756    i.TIMER6_IRQHandler  ac78xx_timer.o
+    0x08002440   0x08002440   0x00000018   Code   RO         2757    i.TIMER7_IRQHandler  ac78xx_timer.o
+    0x08002458   0x08002458   0x0000000a   Code   RO         2758    i.TIMER_ClrIntFlag  ac78xx_timer.o
+    0x08002462   0x08002462   0x0000000a   Code   RO         2760    i.TIMER_GetIntFlag  ac78xx_timer.o
+    0x0800246c   0x0800246c   0x0000009c   Code   RO         2762    i.TIMER_Init        ac78xx_timer.o
+    0x08002508   0x08002508   0x00000020   Code   RO         2764    i.TIMER_ModuleEnable  ac78xx_timer.o
+    0x08002528   0x08002528   0x00000018   Code   RO         2765    i.TIMER_SetCallback  ac78xx_timer.o
+    0x08002540   0x08002540   0x0000003c   Code   RO          207    i.TaskProcess       round_robin_sche.o
+    0x0800257c   0x0800257c   0x00000064   Code   RO          208    i.TaskRemarks       round_robin_sche.o
+    0x080025e0   0x080025e0   0x00000020   Code   RO          307    i.Task_Screen       demo.o
+    0x08002600   0x08002600   0x0000003c   Code   RO          157    i.Task_Wait_One_Frame  timer.o
+    0x0800263c   0x0800263c   0x00000030   Code   RO          158    i.Task_Wait_Respond_Timeout  timer.o
+    0x0800266c   0x0800266c   0x0000003c   Code   RO          159    i.Timer_Init        timer.o
+    0x080026a8   0x080026a8   0x0000000a   Code   RO         2884    i.UART1_IRQHandler  ac78xx_uart.o
+    0x080026b2   0x080026b2   0x0000000a   Code   RO         2885    i.UART2_IRQHandler  ac78xx_uart.o
+    0x080026bc   0x080026bc   0x0000000a   Code   RO         2886    i.UART3_IRQHandler  ac78xx_uart.o
+    0x080026c6   0x080026c6   0x0000000a   Code   RO         2887    i.UART4_IRQHandler  ac78xx_uart.o
+    0x080026d0   0x080026d0   0x0000000a   Code   RO         2888    i.UART5_IRQHandler  ac78xx_uart.o
+    0x080026da   0x080026da   0x00000002   PAD
+    0x080026dc   0x080026dc   0x0000005c   Code   RO          244    i.UART5_SendString  rs485_driver.o
+    0x08002738   0x08002738   0x0000000a   Code   RO         2889    i.UART6_IRQHandler  ac78xx_uart.o
+    0x08002742   0x08002742   0x00000002   PAD
+    0x08002744   0x08002744   0x000000c0   Code   RO          245    i.UART_IRQHandler   rs485_driver.o
+    0x08002804   0x08002804   0x00000144   Code   RO         2893    i.UART_Init         ac78xx_uart.o
+    0x08002948   0x08002948   0x0000004c   Code   RO         2894    i.UART_InterruptHandler  ac78xx_uart.o
+    0x08002994   0x08002994   0x0000002c   Code   RO          440    i.UART_SendData     dmg80480c043_01wtc.o
+    0x080029c0   0x080029c0   0x000000cc   Code   RO         2895    i.UART_SetBaudrate  ac78xx_uart.o
+    0x08002a8c   0x08002a8c   0x00000078   Code   RO         2896    i.UART_SetDataBits  ac78xx_uart.o
+    0x08002b04   0x08002b04   0x00000038   Code   RO         2897    i.UART_SetEventCallback  ac78xx_uart.o
+    0x08002b3c   0x08002b3c   0x00000066   Code   RO         2898    i.UART_SetParity    ac78xx_uart.o
+    0x08002ba2   0x08002ba2   0x00000002   PAD
+    0x08002ba4   0x08002ba4   0x000000a0   Code   RO          441    i.Uart6_IRQHandler  dmg80480c043_01wtc.o
+    0x08002c44   0x08002c44   0x00000038   Code   RO          540    i.VarMalloc         varmalloc.o
+    0x08002c7c   0x08002c7c   0x0000002c   Code   RO         3048    i.Watchdog_IRQHandler  ac78xx_wdg.o
+    0x08002ca8   0x08002ca8   0x0000001e   Code   RO         3554    i.WriteBitsValue    system_ac78xx.o
+    0x08002cc6   0x08002cc6   0x00000002   PAD
+    0x08002cc8   0x08002cc8   0x00000020   Code   RO         3850    i.__0printf$5       mc_w.l(printf5.o)
+    0x08002ce8   0x08002ce8   0x00000024   Code   RO         2767    i.__NVIC_DisableIRQ  ac78xx_timer.o
+    0x08002d0c   0x08002d0c   0x0000000e   Code   RO         4071    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002d1a   0x08002d1a   0x00000002   Code   RO         4072    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002d1c   0x08002d1c   0x0000000e   Code   RO         4073    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002d2a   0x08002d2a   0x00000002   PAD
+    0x08002d2c   0x08002d2c   0x000002c0   Code   RO         3857    i._printf_core      mc_w.l(printf5.o)
+    0x08002fec   0x08002fec   0x00000040   Code   RO          598    i.fputc             ac78xx_debugout.o
+    0x0800302c   0x0800302c   0x00000062   Code   RO          442    i.itoa              dmg80480c043_01wtc.o
+    0x0800308e   0x0800308e   0x00000020   Code   RO            4    i.main              main.o
+    0x080030ae   0x080030ae   0x00000002   PAD
+    0x080030b0   0x080030b0   0x0000006c   Code   RO         3979    i.malloc            mc_w.l(malloc.o)
+    0x0800311c   0x0800311c   0x00000024   Code   RO         3556    i.mdelay            system_ac78xx.o
+    0x08003140   0x08003140   0x00000024   Code   RO         3557    i.udelay            system_ac78xx.o
+    0x08003164   0x08003164   0x00000230   Data   RO         1336    .constdata          ac78xx_gpio.o
+    0x08003394   0x08003394   0x00000028   Data   RO         2769    .constdata          ac78xx_timer.o
+    0x080033bc   0x080033bc   0x00000060   Data   RO         2907    .constdata          ac78xx_uart.o
+    0x0800341c   0x0800341c   0x00000020   Data   RO         4069    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08003420, Size: 0x00004be0, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x00000058])
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800343c, Size: 0x00004be0, Max: 0x00008000, ABSOLUTE, COMPRESSED[0x00000058])
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2641,7 +2643,7 @@ Image component sizes
        460         82         40          0         32      12376   ac78xx_timer.o
        942         38         96          0         24      16504   ac78xx_uart.o
         44          8          0          4          0       4532   ac78xx_wdg.o
-       588         92          0         22          0       4686   demo.o
+       616         94          0         22          0       4690   demo.o
       1902        120          0         20        400      18287   dmg80480c043_01wtc.o
        240         30          0          2        100       2225   led.o
         32          0          0          0          0      12268   main.o
@@ -2655,7 +2657,7 @@ Image component sizes
        136          0          0          0          0       1026   wtn6040.o
 
     ----------------------------------------------------------------------
-     10412       1082       1012        316      19100     294895   Object Totals
+     10440       1084       1012        316      19100     294899   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         12          0          0          5          0          0   (incl. Padding)
 
@@ -2716,15 +2718,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     12332       1168       1012        324      19100     288531   Grand Totals
-     12332       1168       1012         88      19100     288531   ELF Image Totals (compressed)
-     12332       1168       1012         88          0          0   ROM Totals
+     12360       1170       1012        324      19100     288535   Grand Totals
+     12360       1170       1012         88      19100     288535   ELF Image Totals (compressed)
+     12360       1170       1012         88          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13344 (  13.03kB)
+    Total RO  Size (Code + RO Data)                13372 (  13.06kB)
     Total RW  Size (RW Data + ZI Data)             19424 (  18.97kB)
-    Total ROM Size (Code + RO Data + RW Data)      13432 (  13.12kB)
+    Total ROM Size (Code + RO Data + RW Data)      13460 (  13.14kB)
 
 ==============================================================================
 

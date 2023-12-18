@@ -38,7 +38,7 @@ void Led_Control_Task(void)
 	Led_Control(100, 0, 1);				//关闭所有灯光
 	Led_Control(CurrentIndex1, 1, 0);	//标定上限显示
 	Led_Control(CurrentIndex2, 1, 0);	//标定下限显示
-	Num = ((Torque_value.n) + 68)/10;		//单位0.1N*m
+	Num = ((Torque_value.n) + 68)/20;		//单位0.2N*m
 	show_num = (Num + 50) + offset;
 //	Num = fabs(Num);
 	if(show_num < 0)
@@ -80,7 +80,7 @@ void Show_Torsional_Value_Task(void)
 {
 	unsigned char pdata[2] = {0};
 	pdata[0] = 0x00;
-	pdata[1] = Num;
+	pdata[1] = 2 * (show_num - 50);
 	SCREENWriteVarCmd(ADR_DATA_VARIABLES_BAR, pdata, 2);
 }
 
@@ -96,9 +96,9 @@ void Show_Ceiling_Floor_Value_Task(void)
 {
 	unsigned char pdata[2] = {0};
 	pdata[0] = 0x00;
-	pdata[1] = Ceiling_Value;
+	pdata[1] = (2 * Ceiling_Value);
 	SCREENWriteVarCmd(ADR_CEILING_BAR, pdata, 2);
-	pdata[1] = Floor_Value;
+	pdata[1] = (2 * Floor_Value);
 	SCREENWriteVarCmd(ADR_FLOOR_BAR, pdata, 2);
 }
 

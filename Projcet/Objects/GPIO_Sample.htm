@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\GPIO_Sample.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\GPIO_Sample.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Dec 05 13:50:21 2023
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Dec 11 14:17:58 2023
 <BR><P>
 <H3>Maximum Stack Usage =        152 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -243,12 +243,16 @@ Global Symbols
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_epilogue
 </UL>
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
-<LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Control_Task
 <LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Control_Task
 </UL>
 
-<P><STRONG><a name="[56]"></a>__aeabi_fsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<P><STRONG><a name="[56]"></a>__aeabi_fsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = __aeabi_fsub &rArr; __aeabi_fadd &rArr; _float_epilogue
+</UL>
+<BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Show_Torsional_Value_Task
 </UL>
 
 <P><STRONG><a name="[57]"></a>__aeabi_frsub</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, fadd.o(.text))
@@ -256,13 +260,14 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
-<P><STRONG><a name="[b3]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
+<P><STRONG><a name="[a0]"></a>__aeabi_fmul</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, fmul.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Show_Torsional_Value_Task
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
 <P><STRONG><a name="[58]"></a>__aeabi_fdiv</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, fdiv.o(.text))
@@ -270,7 +275,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_float_round
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
 <P><STRONG><a name="[59]"></a>__aeabi_i2f</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fflti.o(.text))
@@ -288,19 +293,19 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Speaker_Task
 <LI><a href="#[5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RGY_Light_Task
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
 <P><STRONG><a name="[81]"></a>__aeabi_f2uiz</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, ffixui.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Show_Torsional_Value_Task
 <LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Led_Control_Task
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
 <P><STRONG><a name="[5b]"></a>__aeabi_f2ulz</STRONG> (Thumb, 44 bytes, Stack size 0 bytes, ffixul.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_llsl
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
 </UL>
 
 <P><STRONG><a name="[c5]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cfcmple.o(.text), UNUSED)
@@ -406,11 +411,11 @@ Global Symbols
 <LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN1_Handler
 </UL>
 
-<P><STRONG><a name="[ab]"></a>CKGEN_Enable</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, ac78xx_ckgen.o(i.CKGEN_Enable))
+<P><STRONG><a name="[ac]"></a>CKGEN_Enable</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, ac78xx_ckgen.o(i.CKGEN_Enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CKGEN_Enable
 </UL>
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
 </UL>
 
 <P><STRONG><a name="[62]"></a>CKGEN_SetAPBClockDivider</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, ac78xx_ckgen.o(i.CKGEN_SetAPBClockDivider))
@@ -481,11 +486,11 @@ Global Symbols
 <LI><a href="#[8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NMI_Handler
 </UL>
 
-<P><STRONG><a name="[ac]"></a>CKGEN_SoftReset</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, ac78xx_ckgen.o(i.CKGEN_SoftReset))
+<P><STRONG><a name="[ad]"></a>CKGEN_SoftReset</STRONG> (Thumb, 64 bytes, Stack size 16 bytes, ac78xx_ckgen.o(i.CKGEN_SoftReset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = CKGEN_SoftReset
 </UL>
 <BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
 </UL>
 
 <P><STRONG><a name="[2b]"></a>DMA10_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, ac78xx_dma.o(i.DMA10_IRQHandler))
@@ -982,7 +987,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> round_robin_sche.o(.data)
 </UL>
-<P><STRONG><a name="[a2]"></a>SetEflashClock</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, system_ac78xx.o(i.SetEflashClock))
+<P><STRONG><a name="[a3]"></a>SetEflashClock</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, system_ac78xx.o(i.SetEflashClock))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = SetEflashClock
 </UL>
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
@@ -1011,17 +1016,19 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[48]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[4]"></a>Show_Ceiling_Floor_Value_Task</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, demo.o(i.Show_Ceiling_Floor_Value_Task))
+<P><STRONG><a name="[4]"></a>Show_Ceiling_Floor_Value_Task</STRONG> (Thumb, 60 bytes, Stack size 8 bytes, demo.o(i.Show_Ceiling_Floor_Value_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Show_Ceiling_Floor_Value_Task &rArr; SCREENWriteVarCmd &rArr; SCREENHandle &rArr; __2printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCREENWriteVarCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> round_robin_sche.o(.data)
 </UL>
-<P><STRONG><a name="[3]"></a>Show_Torsional_Value_Task</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, demo.o(i.Show_Torsional_Value_Task))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = Show_Torsional_Value_Task &rArr; SCREENWriteVarCmd &rArr; SCREENHandle &rArr; __2printf
+<P><STRONG><a name="[3]"></a>Show_Torsional_Value_Task</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, demo.o(i.Show_Torsional_Value_Task))
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = Show_Torsional_Value_Task &rArr; SCREENWriteVarCmd &rArr; SCREENHandle &rArr; __2printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCREENWriteVarCmd
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> round_robin_sche.o(.data)
@@ -1056,7 +1063,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SystemInit &rArr; SetSysClock &rArr; SetHSEClock &rArr; CKGEN_SetSysclkSrc &rArr; WriteBitsValue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetSysClock
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEflashClock
+<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetEflashClock
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SetSFlashClock
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SetAPBClockDivider
 </UL>
@@ -1065,11 +1072,11 @@ Global Symbols
 <P><STRONG><a name="[4c]"></a>TIM1_Task</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, timer.o(i.TIM1_Task))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = TIM1_Task &rArr; LED_TASK &rArr; GPIO_SetPinBits
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TaskRemarks
-<LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_GetIntFlag
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ClrIntFlag
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Wait_Respond_Timeout
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Wait_One_Frame
+<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TaskRemarks
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_GetIntFlag
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ClrIntFlag
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Wait_Respond_Timeout
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Task_Wait_One_Frame
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_TASK
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> timer.o(i.Timer_Init)
@@ -1114,34 +1121,34 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
-<P><STRONG><a name="[a7]"></a>TIMER_ClrIntFlag</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_ClrIntFlag))
+<P><STRONG><a name="[a8]"></a>TIMER_ClrIntFlag</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_ClrIntFlag))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Task
 </UL>
 
-<P><STRONG><a name="[a3]"></a>TIMER_GetIntFlag</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_GetIntFlag))
+<P><STRONG><a name="[a4]"></a>TIMER_GetIntFlag</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_GetIntFlag))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Task
 </UL>
 
-<P><STRONG><a name="[a8]"></a>TIMER_Init</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, ac78xx_timer.o(i.TIMER_Init))
+<P><STRONG><a name="[a9]"></a>TIMER_Init</STRONG> (Thumb, 144 bytes, Stack size 24 bytes, ac78xx_timer.o(i.TIMER_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = TIMER_Init &rArr; TIMER_ModuleEnable &rArr; CKGEN_SoftReset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
+<BR>[Calls]<UL><LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_ModuleEnable
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_DisableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
+<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
 </UL>
 
-<P><STRONG><a name="[a9]"></a>TIMER_ModuleEnable</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, ac78xx_timer.o(i.TIMER_ModuleEnable))
+<P><STRONG><a name="[aa]"></a>TIMER_ModuleEnable</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, ac78xx_timer.o(i.TIMER_ModuleEnable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = TIMER_ModuleEnable &rArr; CKGEN_SoftReset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SoftReset
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_Enable
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SoftReset
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_Enable
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
 </UL>
 
-<P><STRONG><a name="[ae]"></a>TIMER_SetCallback</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_SetCallback))
-<BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
+<P><STRONG><a name="[af]"></a>TIMER_SetCallback</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, ac78xx_timer.o(i.TIMER_SetCallback))
+<BR><BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
 </UL>
 
 <P><STRONG><a name="[b8]"></a>TaskProcess</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, round_robin_sche.o(i.TaskProcess))
@@ -1150,7 +1157,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a6]"></a>TaskRemarks</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, round_robin_sche.o(i.TaskRemarks))
+<P><STRONG><a name="[a7]"></a>TaskRemarks</STRONG> (Thumb, 96 bytes, Stack size 0 bytes, round_robin_sche.o(i.TaskRemarks))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Task
 </UL>
 
@@ -1162,19 +1169,19 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> round_robin_sche.o(.data)
 </UL>
-<P><STRONG><a name="[a4]"></a>Task_Wait_One_Frame</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, timer.o(i.Task_Wait_One_Frame))
+<P><STRONG><a name="[a5]"></a>Task_Wait_One_Frame</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, timer.o(i.Task_Wait_One_Frame))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Task
 </UL>
 
-<P><STRONG><a name="[a5]"></a>Task_Wait_Respond_Timeout</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, timer.o(i.Task_Wait_Respond_Timeout))
+<P><STRONG><a name="[a6]"></a>Task_Wait_Respond_Timeout</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, timer.o(i.Task_Wait_Respond_Timeout))
 <BR><BR>[Called By]<UL><LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_Task
 </UL>
 
-<P><STRONG><a name="[ad]"></a>Timer_Init</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, timer.o(i.Timer_Init))
+<P><STRONG><a name="[ae]"></a>Timer_Init</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, timer.o(i.Timer_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = Timer_Init &rArr; TIMER_Init &rArr; TIMER_ModuleEnable &rArr; CKGEN_SoftReset
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_SetCallback
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
+<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_SetCallback
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1182,35 +1189,35 @@ Global Symbols
 <P><STRONG><a name="[12]"></a>UART1_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART1_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
 <P><STRONG><a name="[13]"></a>UART2_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART2_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART2_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
 <P><STRONG><a name="[14]"></a>UART3_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART3_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART3_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
 <P><STRONG><a name="[15]"></a>UART4_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART4_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART4_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
 <P><STRONG><a name="[16]"></a>UART5_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART5_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART5_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
@@ -1226,7 +1233,7 @@ Global Symbols
 <P><STRONG><a name="[17]"></a>UART6_IRQHandler</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, ac78xx_uart.o(i.UART6_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UART6_IRQHandler &rArr; UART_InterruptHandler
 </UL>
-<BR>[Calls]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
+<BR>[Calls]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_InterruptHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_ac78xx.o(RESET)
 </UL>
@@ -1238,23 +1245,23 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>UART_Init</STRONG> (Thumb, 314 bytes, Stack size 16 bytes, ac78xx_uart.o(i.UART_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 84<LI>Call Chain = UART_Init &rArr; UART_SetBaudrate &rArr; __aeabi_frsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SoftReset
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_Enable
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetParity
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetDataBits
+<BR>[Calls]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_SoftReset
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CKGEN_Enable
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetBaudrate
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetParity
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_SetDataBits
 </UL>
 <BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCREENInit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RS485_Init
 </UL>
 
-<P><STRONG><a name="[b2]"></a>UART_SetBaudrate</STRONG> (Thumb, 200 bytes, Stack size 48 bytes, ac78xx_uart.o(i.UART_SetBaudrate))
+<P><STRONG><a name="[b3]"></a>UART_SetBaudrate</STRONG> (Thumb, 200 bytes, Stack size 48 bytes, ac78xx_uart.o(i.UART_SetBaudrate))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = UART_SetBaudrate &rArr; __aeabi_frsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_frsub
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2ulz
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
+<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
@@ -1334,7 +1341,7 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = main &rArr; SCREENInit &rArr; UART_Init &rArr; UART_SetBaudrate &rArr; __aeabi_frsub &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VarMalloc
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Timer_Init
 <LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TaskProcess
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SCREENInit
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RS485_Init
@@ -1353,8 +1360,8 @@ Global Symbols
 <P><STRONG><a name="[83]"></a>mdelay</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, system_ac78xx.o(i.mdelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = mdelay &rArr; SysTickRepeatDelay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Line_2A_WTN6
 </UL>
@@ -1362,8 +1369,8 @@ Global Symbols
 <P><STRONG><a name="[84]"></a>udelay</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, system_ac78xx.o(i.udelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = udelay &rArr; SysTickRepeatDelay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
-<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Line_2A_WTN6
 </UL>
@@ -1416,11 +1423,11 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[31]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
 </UL>
 
-<P><STRONG><a name="[aa]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, ac78xx_timer.o(i.__NVIC_DisableIRQ))
-<BR><BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
+<P><STRONG><a name="[ab]"></a>__NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, ac78xx_timer.o(i.__NVIC_DisableIRQ))
+<BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_Init
 </UL>
 
-<P><STRONG><a name="[af]"></a>UART_InterruptHandler</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, ac78xx_uart.o(i.UART_InterruptHandler))
+<P><STRONG><a name="[b0]"></a>UART_InterruptHandler</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, ac78xx_uart.o(i.UART_InterruptHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = UART_InterruptHandler
 </UL>
 <BR>[Called By]<UL><LI><a href="#[17]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART6_IRQHandler
@@ -1431,24 +1438,24 @@ Local Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART1_IRQHandler
 </UL>
 
-<P><STRONG><a name="[b0]"></a>UART_SetDataBits</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, ac78xx_uart.o(i.UART_SetDataBits))
+<P><STRONG><a name="[b1]"></a>UART_SetDataBits</STRONG> (Thumb, 120 bytes, Stack size 0 bytes, ac78xx_uart.o(i.UART_SetDataBits))
 <BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 </UL>
 
-<P><STRONG><a name="[b1]"></a>UART_SetParity</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, ac78xx_uart.o(i.UART_SetParity))
+<P><STRONG><a name="[b2]"></a>UART_SetParity</STRONG> (Thumb, 102 bytes, Stack size 0 bytes, ac78xx_uart.o(i.UART_SetParity))
 <BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Init
 </UL>
 
-<P><STRONG><a name="[a1]"></a>SysTickDelay</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, system_ac78xx.o(i.SysTickDelay))
+<P><STRONG><a name="[a2]"></a>SysTickDelay</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, system_ac78xx.o(i.SysTickDelay))
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;udelay
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mdelay
-<LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
+<LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickRepeatDelay
 </UL>
 
-<P><STRONG><a name="[a0]"></a>SysTickRepeatDelay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, system_ac78xx.o(i.SysTickRepeatDelay))
+<P><STRONG><a name="[a1]"></a>SysTickRepeatDelay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, system_ac78xx.o(i.SysTickRepeatDelay))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SysTickRepeatDelay
 </UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
+<BR>[Calls]<UL><LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTickDelay
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;udelay
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mdelay
