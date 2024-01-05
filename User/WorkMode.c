@@ -100,7 +100,7 @@ void Menu_Pro(void)
 
 			//обоч╪У
 			case ADR_KEY_CALIB_FLOOR_SUB:
-				if(Floor_Value > 1)
+				if(Floor_Value > 0)
 				{
 					Floor_Value--;
 				}

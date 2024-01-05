@@ -520,13 +520,13 @@ void SCREENprintf(uint32_t Adr,char* Data,...)
         case ADR_RETURN_STATUS_BAR://主界面的状态返回栏
             for(;ScreenSendIndex<TEXT_DIS_TIP_LEN;ScreenSendIndex++)
                 ScreenSendBuf[ScreenSendIndex]=0xFF;
-            SCREENWriteVarCmd(Adr,ScreenSendBuf,TEXT_DIS_TIP_LEN);
+            SCREENWriteVarCmd(Adr,(unsigned char *)ScreenSendBuf,TEXT_DIS_TIP_LEN);
             break;
         
         case ADR_RETURN_TORSIONAL_VALUE_BAR://扭力值界面的扭力值大小栏
             for(;ScreenSendIndex < TEXT_DIS_VALUE_LEN;ScreenSendIndex++)
                 ScreenSendBuf[ScreenSendIndex]=0xFF;
-            SCREENWriteVarCmd(Adr,ScreenSendBuf,TEXT_DIS_VALUE_LEN);
+            SCREENWriteVarCmd(Adr,(unsigned char *)ScreenSendBuf,TEXT_DIS_VALUE_LEN);
             break;
         
     }
@@ -589,7 +589,7 @@ void SCREENPageSwitch(unsigned short pageid)
     ScreenSendBuf[1]=1;
     ScreenSendBuf[2]=(unsigned char)(pageid>>8);
     ScreenSendBuf[3]=(unsigned char)pageid;
-    SCREENWriteVarCmd(ADR_PIC_SET,ScreenSendBuf,4);
+    SCREENWriteVarCmd(ADR_PIC_SET,(unsigned char *)ScreenSendBuf,4);
 }
 
 /**************************************************************************

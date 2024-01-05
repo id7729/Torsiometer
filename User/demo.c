@@ -8,8 +8,8 @@
 #include "WTN6040.h"
 uint8_t ReadMeasuredValue[8] = {0x01, 0x03, 0x00, 0x1E, 0x00, 0x02, 0xA4, 0x0D};//读取测量值请求报文
 Data_Processing_U Torque_value;
-float show_num = 0;	
-float Num=0;
+int show_num = 0;	
+int Num=0;
 uint8_t flag_speaker_yet = 0;
 uint8_t flag_speaker_yet_counter = 0;
 
@@ -38,7 +38,7 @@ void Led_Control_Task(void)
 	Led_Control(100, 0, 1);				//关闭所有灯光
 	Led_Control(CurrentIndex1, 1, 0);	//标定上限显示
 	Led_Control(CurrentIndex2, 1, 0);	//标定下限显示
-	Num = ((Torque_value.n) + 68)/20;		//单位0.2N*m
+	Num = ((Torque_value.n) + 68)/20;	//单位0.2N*m
 	show_num = (Num + 50) + offset;
 //	Num = fabs(Num);
 	if(show_num < 0)
@@ -80,7 +80,14 @@ void Show_Torsional_Value_Task(void)
 {
 	unsigned char pdata[2] = {0};
 	pdata[0] = 0x00;
-	pdata[1] = 2 * (show_num - 50);
+	if(show_num < 50)
+	{
+		pdata[1] = 2 * (50 - show_num);
+	}
+	else
+	{
+		pdata[1] = 2 * (show_num - 50);
+	}
 	SCREENWriteVarCmd(ADR_DATA_VARIABLES_BAR, pdata, 2);
 }
 
